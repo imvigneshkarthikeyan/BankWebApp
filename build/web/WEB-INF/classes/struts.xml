@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this template
+-->
+
+
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+    <package name="/" extends="struts-default">
+        <!-- Add your actions here -->
+        
+        <!--Common-->
+        <action name="CustomerLogin" class="controller.common.CustomerLogin" />
+        <action name="StaffLogin" class="controller.common.StaffLogin" />
+        <action name="logout" class="controller.common.Logout" />
+        <action name="validateUserId" class="controller.common.CustomerSignUpValidate" />
+        <action name="fetchbank" class="controller.common.CustomerSignUpGetBank" />
+        <action name="fetchbranch" class="controller.common.CustomerSignUpFetchBranch" />
+        <action name="validateBranch" class="controller.common.CustomerSignUpValidateBranch" />
+        <action name="createnew" class="controller.common.CustomerSignUpCreateNew" />
+
+        
+        <!--Customer-->
+        <action name="CustomerDetails" class="controller.customer.CustomerHome">
+            <result name="error">/error.jsp</result>
+        </action>
+        <action name="CustomerBalance" class="controller.customer.CustomerShowBalance" />
+        <action name="TransferValidate" class="controller.customer.TransferMoneyValidation" />
+        <action name="TransferFund" class="controller.customer.TransferFund" />
+        <action name="CustomerHistory" class="controller.customer.CustomerTransactions" />
+        <action name="GetCustomerInfo" class="controller.customer.CustomerGetInfo" />
+        <action name="GetEditData" class="controller.customer.CustomerEditInfoData" />
+        <action name="EditInfo" class="controller.customer.CustomerEditInfo" />
+        
+
+        <!--Manager-->        
+        <action name="ValidateStaff" class="controller.manager.ValidateStaffForAdd" />
+        <action name="AddStaff" class="controller.manager.AddNewStaff" />
+        <action name="StaffValidate" class="controller.manager.ValidateStaffForRemove" />
+        <action name="DeleteStaff" class="controller.manager.DeleteStaff" />
+        <action name="ListAllStaff" class="controller.manager.ListAllStaffs" />
+        <action name="ListAllBankTransactions" class="controller.manager.ListBankWideTransactions" />
+        
+        <action name="StaffDetails" class="controller.staff.StaffHome" />
+
+        <!--Staff-->
+        <action name="ValidateAccount" class="controller.staff.ValidateAccount" />
+        <action name="AddAmount" class="controller.staff.AddMoney" />
+        <action name="withdraw" class="controller.staff.WithdrawMoney" />
+        <action name="viewallcustomers" class="controller.staff.ViewAllCustomer" />
+        
+    </package>
+</struts>
